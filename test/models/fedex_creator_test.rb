@@ -10,4 +10,9 @@ class FedexCreatorTest < ActiveSupport::TestCase
     fedex_creator = FedexCreator.new
     assert_not_equal SkyDhl, fedex_creator.factory.class
   end
+
+  test "the carrier name should be FedEx" do
+    fedex_creator = FedexCreator.new
+    assert_equal "FedEx", fedex_creator.get_name
+  end
 end
