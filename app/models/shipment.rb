@@ -1,10 +1,17 @@
 class Shipment
+  include ShipmentStatusFactory
+
   attr_reader :carrier, :tracking_number
-  attr_accessor :status, :events
+  attr_accessor :status, :description_status, :events
   
   def initialize(attributes = {})
     @carrier = attributes[:carrier]
     @tracking_number = attributes[:tracking_number]
+  end
+
+  def status=(status)
+    @status = get_approved_status(status)
+    @description_status = status
   end
 
   def self.build_from_json_array(json_array)
