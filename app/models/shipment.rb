@@ -5,6 +5,8 @@ class Shipment
   attr_accessor :status, :description_status, :events
   
   def initialize(attributes = {})
+    raise ArgumentError if attributes[:carrier].blank? or attributes[:tracking_number].blank?
+    
     @carrier = attributes[:carrier]
     @tracking_number = attributes[:tracking_number]
   end
