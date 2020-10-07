@@ -30,4 +30,24 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  error_messages:
+
+    # Shipments
+    shipment_not_found:
+      title: "No se encontró el envío"
+      detail: "El envío no existe o fue eliminado. Pudo ser eliminado por la paquetería."
+
+    # Shipments
+    shipment_argument_error:
+      title: "No es posible encontrar el envío con la información proporcionada"
+      detail: "Uno o mas datos proporcionados para el rastreo no son correctos."
+
+    # Carriers
+    carrier_not_implemented:
+      title: "Paquetería no implementada"
+      detail: "El envío que intenta consultar, pertenece a una paquetería no implementada aún."
+
+    # Unknown error
+    unknown_error:
+      title: "Ocurrió un error inesperado"
+      detail: "Lo estamos revisando, por favor intenta de nuevo mas tarde."
