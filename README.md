@@ -79,4 +79,5 @@ Uno para realizar el rastreo de un envío específico y el otro para realizar un
     ]
   }
   ```
-  
+  ### Diagrama de clases
+  ![Diagrama de clases](https://www.planttext.com/api/plantuml/svg/dLJBRiCW4Bpp5HmTHSaNL5MajEa7f7T4yCQXmM31EahKzD-B0TkujTgg5zlxO7Pc1tdZa5jiQqK8IbH0z-TRQKrpfUB4bG9T0Iqbhool2H6AEqVt9zdKeD5jZKPhV9EbxuJI9KNBnRbOq9Vdrn3NhVAWa-IAmXL4Yy1YFZobhbZ3_GYt22s2Mol1Cc61ex557sjUG-m8nzAP8gR6OMF-e-UyZGY9f-iLJ28cbFIlKGdZY50tw9XkwmFOKEauX8bB6kW1uura8uRH6WHAerDJaXyd0R9Pv2IXylKEpGEN7anoDITY6xUIj1ovyC6j63J5KHrKHhLdCM0zdTIlE4FppjEv_hszlo2fDRatykZipZRgRo2sqOeIdB2owTR7iZHSHhDQ8S0vrWDb26c9XrQgaXsjgTcRypX-EhyLusTEz7ppUyYY83JH_g_HtzQm3-nsSM49F3hTM7E1CYajuYi0V77wuRvQPOxDbdEF1e2kfE28grxgN3wS78yO3zPJ9sJmShs-FyvB8dC_X7NRT0SoqZzqJRddTtDjPNN2C3eAcDx5IJdge8HiG9V-Z_O9 "Diagrama de clases")
