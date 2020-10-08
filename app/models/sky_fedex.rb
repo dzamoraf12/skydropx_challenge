@@ -12,7 +12,9 @@ class SkyFedex < Carrier
     shipment_data = results.first
     shipment.status = shipment_data.status
     shipment.events = shipment_data.events
+    shipment.success_tracking = true
   rescue Fedex::RateError => e
+    shipment.success_tracking = true if e.message.include? "cannot be found"
     shipment.status = e.message
   end
 end

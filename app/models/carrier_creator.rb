@@ -11,9 +11,14 @@ class CarrierCreator
   def track(shipments)
     carrier = factory
     carrier.create_api_shipment_connection
+    carrier.set_track_attempts_number
 
     shipments.each do |shipment|
-      carrier.track(shipment)
+      carrier.track_attempts_number.times do |i|
+        p "intento de rastreo #{i + 1} de #{carrier.track_attempts_number}"
+        carrier.track(shipment)
+        break if shipment.success_tracking
+      end
     end
 
     shipments

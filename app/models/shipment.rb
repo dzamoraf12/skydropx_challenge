@@ -2,13 +2,14 @@ class Shipment
   include ShipmentStatusFactory
 
   attr_reader :carrier, :tracking_number
-  attr_accessor :status, :description_status, :events
+  attr_accessor :status, :description_status, :events, :success_tracking
   
   def initialize(attributes = {})
     raise ArgumentError if attributes[:carrier].blank? or attributes[:tracking_number].blank?
     
     @carrier = attributes[:carrier]
     @tracking_number = attributes[:tracking_number]
+    @success_tracking = false
   end
 
   def status=(status)
