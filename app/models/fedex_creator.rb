@@ -1,5 +1,5 @@
 class FedexCreator < CarrierCreator
-  def factory
-    SkyFedex.new
+  def factory(shipments)
+    SkyFedex.new(shipments)
   end
 end
