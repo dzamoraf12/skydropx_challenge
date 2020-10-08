@@ -1,4 +1,16 @@
 class ShipmentsController < ApplicationController
+  rescue_from NotImplementedError do |e|
+    render_json_error :internal_server_error, :carrier_not_implemented
+  end
+
+  rescue_from StandardError do |e|
+    if e.class == ArgumentError
+      render_json_error :unprocessable_entity, :shipment_argument_error
+    else
+      render_json_error :internal_server_error, :unknown_error
+    end
+  end
+
   def track
     shipments_data = execute_track(track_params)
 
