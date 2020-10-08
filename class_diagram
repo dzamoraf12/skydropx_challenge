@@ -1,0 +1,78 @@
+@startuml
+
+title Skydropx challenge diagram
+
+class ShipmentsController {
+  + track() GET
+  + multitrack() GET
+  - execute_track(tracking_params)
+  - carrier_creator(carrier_name)
+  - track_params()
+  - multitrack_params()
+}
+
+class Carrier {
+  + shipments
+  + shipment_client
+  + track_attempts_number
+  + name()
+  + create_api_shipment_connection()
+  + track()
+  + set_track_attempts_number()
+  - get_api_credentials()
+}
+
+class CarrierCreator {
+  + factory(shipments)
+  + get_name()
+  + track()
+}
+
+class DhlCreator {
+  + factory(shipments)
+}
+
+class FedexCreator {
+  + factory(shipments)
+}
+
+class Shipment {
+  + carrier
+  + tracking_number
+  + status
+  + description_status
+  + events
+  + success_tracking
+  + status()
+  - build_from_json_array(json_array)
+}
+
+class SkyDhl
+
+class SkyFedex {
+  + name()
+  + create_api_shipment_connection()
+  + track()
+}
+
+class ShipmentStatusFactory {
+  + get_approved_status(status)
+}
+
+CarrierCreator <|-- DhlCreator
+CarrierCreator <|-- FedexCreator
+
+Carrier <|-left- SkyDhl
+Carrier <|-left- SkyFedex
+
+Carrier o-- Shipment
+
+Shipment ..|> ShipmentStatusFactory
+ShipmentsController .up.|> DhlCreator
+ShipmentsController .up.|> FedexCreator
+
+ DhlCreator .right.|> SkyDhl
+ FedexCreator .right.|> SkyFedex
+ 
+
+@enduml
