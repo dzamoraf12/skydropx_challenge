@@ -28,3 +28,55 @@ development:
       meter: x
       mode: x
 ```
+### El microservicio cuenta con 2 endpoints GET
+Uno para realizar el rastreo de un envío específico y el otro para realizar un multirastreo es decir, un rastreo de multiples envíos.
+* Endpoint para un solo rastreo `<url base>/fedex/shipments/449044304137821/track` al cual no se le envía un cuerpo en la petición.
+* Endpoint multirastreo `<url base>/shipments/multitrack` al cual se le envía el siguiente json en el cuerpo en la petición.
+
+  ```json
+  {
+    "shipments_data": [
+      {
+        "tracking_number": "449044304137821",
+        "carrier": "FEDEX"
+      },
+      {
+        "tracking_number": "920241085725456",
+        "carrier": "FEDEX"
+      },
+      {
+        "tracking_number": "568838414941",
+        "carrier": "FEDEX"
+      },
+      {
+        "tracking_number": "039813852990618",
+        "carrier": "FEDEX"
+      },
+      {
+        "tracking_number": "779784773617",
+        "carrier": "FEDEX"
+      },
+      {
+        "tracking_number": "779766864720",
+        "carrier": "FEDEX"
+      },
+      {
+        "tracking_number": "390321684219",
+        "carrier": "FEDEX"
+      },
+      {
+        "tracking_number": "149331877648230",
+        "carrier": "FEDEX"
+      },
+      {
+        "tracking_number": "231300687629630",
+        "carrier": "FEDEX"
+      },
+      {
+        "tracking_number": "122816215025810",
+        "carrier": "FEDEX"
+      }
+    ]
+  }
+  ```
+  
