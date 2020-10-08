@@ -1,5 +1,5 @@
 class DhlCreator < CarrierCreator
-  def factory
-    SkyDhl.new
+  def factory(shipments)
+    SkyDhl.new(shipments)
   end
 end

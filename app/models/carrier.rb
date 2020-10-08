@@ -1,5 +1,9 @@
 class Carrier
-  attr_accessor :shipment_client, :track_attempts_number
+  attr_accessor :shipments, :shipment_client, :track_attempts_number
+
+  def initialize(shipments)
+    @shipments = shipments
+  end
 
   def name
     raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
